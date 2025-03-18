@@ -1,0 +1,259 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #0062cc, #00b3b3); /* Updated background colors */
+    color: #f1f1f1;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-top: 60px; 
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header .dropdown {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff66b2; 
+    transform: translateY(-5px);
+}
+
+.hero {
+    background: #ffcc00; 
+    color: #222;
+    text-align: center;
+    padding: 20px;
+    max-width:80;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.342);
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white; 
+    text-shadow: 2px 2px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+main {
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+article {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    width: 100%;
+}
+
+article h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+article p {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    line-height: 1.8;
+}
+
+.card {
+    background-color: #444; 
+    padding: 20px;
+    border-radius: 15px;
+    border: 7px solid currentcolor;
+    box-shadow: 0 6px 20px rgba(17, 174, 202, 0.534);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(7, 140, 145, 0.651);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff; 
+}
+
+.card .card-description {
+    font-size: 1.1rem;
+    color: #ccc; 
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 5;
+    margin-top: auto;
+    width: 100%;
+    display: inline-block;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+.story {
+    text-align: center;
+    padding: 60px 20px;
+    background: #2d2d2d; 
+    color: #fff;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.story h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffcc00; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.story p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.story .highlight {
+    font-weight: bold;
+    color: #ff66b2; 
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    article h2 {
+        font-size: 1.8rem;
+    }
+
+    article p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    article {
+        grid-template-columns: 1fr; 
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .story h2 {
+        font-size: 2rem;
+    }
+
+    .story p {
+        font-size: 1rem;
+    }
+}
