@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
-  <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Login</title>
+  <link rel="stylesheet" href="login.css" />
 </head>
 <body>
 
@@ -20,7 +20,7 @@
       </div>
 
       <div class="remember-forgot">
-        <label><input type="checkbox"> Remember me</label>
+        <label><input type="checkbox" /> Remember me</label>
         <a href="#">Forgot password?</a>
       </div>
 
@@ -41,15 +41,14 @@
     const passwordInput = document.getElementById("password");
 
     togglePassword.addEventListener("click", () => {
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
-      togglePassword.textContent = type === "password" ? "👁️" : "🙈";
+      const isPassword = passwordInput.getAttribute("type") === "password";
+      passwordInput.setAttribute("type", isPassword ? "text" : "password");
+      togglePassword.textContent = isPassword ? "🙈" : "👁️";
     });
 
     const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener('submit', function (event) {
       event.preventDefault();
-
       alert("Login successful! Redirecting...");
       window.location.href = 'home.html';
     });
@@ -57,3 +56,4 @@
 
 </body>
 </html>
+
