@@ -1,4 +1,4 @@
-* { 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,170 +6,128 @@
 }
 
 body {
-    background: linear-gradient(to right, #0062cc, #00b3b3); /* Updated background colors */
+    background: linear-gradient(to right, #0062cc, #00b3b3);
     color: #f1f1f1;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    padding-top: 60px; 
+    padding-top: 70px;
     overflow-x: hidden;
 }
-
 header {
     background-color: #222;
-    color: #fff;
-    padding: 15px 20px;
+    color: white;
+    padding: 15px 0;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 100;
+    top: 0;
+    z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-header .dropdown {
-    width: 80%;
-    margin: 0 auto;
-}
-
-nav ul {
-    list-style-type: none;
+header nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    list-style: none;
+    gap: 30px;
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
+header nav ul li a {
     color: #fff;
-    font-size: 1.1rem;
+    text-decoration: none;
     font-weight: bold;
-    display: inline-block;
-    padding: 8px 15px;
+    font-size: 1rem;
+    padding: 8px 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s, transform 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ff66b2; 
-    transform: translateY(-5px);
+header nav ul li a:hover {
+    color: #ff66b2;
+    transform: translateY(-3px);
 }
 
 .hero {
-    background: #ffcc00; 
+    background-color: #ffcc00;
     color: #222;
     text-align: center;
-    padding: 20px;
-    max-width:80;
+    padding: 60px 20px;
     margin: 0 auto;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.342);
-    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px #222;
     text-transform: uppercase;
-    font-weight: 300;
-    color: white; 
-    text-shadow: 2px 2px;
 }
 
 .hero p {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-top: 15px;
     color: #222;
 }
 
 main {
-    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
 }
 
 article {
     display: grid;
     gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
-}
-
-article h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #f1f1f1;
-}
-
-article p {
-    font-size: 1.2rem;
-    color: #f1f1f1;
-    line-height: 1.8;
 }
 
 .card {
-    background-color: #444; 
-    padding: 20px;
+    background-color: #444;
+    color: white;
+    padding: 25px;
     border-radius: 15px;
-    border: 7px solid currentcolor;
-    box-shadow: 0 6px 20px rgba(17, 174, 202, 0.534);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    width: 100%;
+    box-shadow: 0 6px 20px rgba(17, 174, 202, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(7, 140, 145, 0.651);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(7, 140, 145, 0.65);
 }
 
 .card img {
     width: 100%;
-    height: auto;
+    max-height: 250px;
+    object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.card .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff; 
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
 }
 
-.card .card-description {
+.card p {
     font-size: 1.1rem;
-    color: #ccc; 
+    line-height: 1.8;
+    color: #e6e6e6;
 }
-
 footer {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 5;
-    margin-top: auto;
+    padding: 25px 20px;
+    margin-top: 50px;
     width: 100%;
-    display: inline-block;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -178,75 +136,56 @@ footer p {
 }
 
 .story {
-    text-align: center;
-    padding: 60px 20px;
-    background: #2d2d2d; 
+    background-color: #2d2d2d;
     color: #fff;
-    width: 100%;
-    margin-top: 40px;
+    padding: 60px 20px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .story h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    letter-spacing: 1.5px;
+    color: #ffcc00;
     text-transform: uppercase;
-    color: #ffcc00; 
+    margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .story p {
-    font-size: 1.2rem;
     max-width: 900px;
     margin: 0 auto;
-    line-height: 1.8;
+    font-size: 1.2rem;
     color: white;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    line-height: 1.8;
 }
 
 .story .highlight {
     font-weight: bold;
-    color: #ff66b2; 
+    color: #ff66b2;
     text-decoration: underline;
-    letter-spacing: 0.5px;
 }
+
 @media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-    
+
     .hero p {
-        font-size: 1.2rem;
-    }
-
-    article h2 {
-        font-size: 1.8rem;
-    }
-
-    article p {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        margin-top: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    main {
-        flex-direction: column;
-        padding: 20px;
+        font-size: 1.1rem;
     }
 
     article {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
-    .hero {
-        padding: 100px 20px;
+    .card img {
+        max-height: 200px;
     }
 
     .story h2 {
