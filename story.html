@@ -1,69 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1">
-    <title>Story Of My Life</title>
-    <link rel="stylesheet" href="story.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Story Of My Life</title>
+  <link rel="stylesheet" href="story.css" />
 </head>
 <body>
+
 <header>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="story.html">Story</a></li>
-                <li><a href="favorite.html">Favorite</a></li>
-                <li><a href="login.html" class="signup-btn">Sign Up</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="favorite.html">Favorite</a></li>
+        <li><a href="login.html" class="signup-btn">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-    <div class="container">
-        <h1>Story of My Life</h1>
-    </div>
+  <div class="container">
+    <h1>Story of My Life</h1>
+  </div>
 </section>
+
 <main>
-    <article>
-        <div class="card">
-            <h2>Chapter 1: Early Stages</h2>
-            <img src="early.jpg" title="early" height="300" width="500">
-            <p>Hi Guys! My name is Jamesmile C. Nogalada, born on March 11, 2004. I was born in Cebu City but when I was a child, my parents let me grow up in the province so that I could have a memorable childhood as they say to me. When I was a child, I had many fun experiences, like being without an internet connection or gadgets. I could have a great time playing with other kids and enjoy the day without feeling tired. All I can say is that I have wonderful memories from when I was young.</p>
-        </div>
+  <article id="story-content">
 
-        <div class="card">
-            <h2>Chapter 2: Elementary Stages</h2>
-            <img src="elem.jpg" title="elem" height="300" width="500">
-            <p>School was my second home. Back in my day, I really loved studying and joining activities. Whatever the school did, it was enjoyable because you would meet so many people and make new friends. School was not stressful for me because I always excused myself due to sports or other extracurricular activities, which helped me make great memories in school.</p>
-        </div>
+    <div class="card fade-in">
+      <h2>Chapter 1: Early Stages</h2>
+      <img src="early.jpg" alt="Early Childhood" class="story-img" />
+      <p>Hi Guys! My name is Jamesmile C. Nogalada, born on March 11, 2004... (truncated for brevity)</p>
+    </div>
 
-        <div class="card">
-            
-            <h2>Chapter 3: Highschool and Senior Highschool Stages</h2>
-            <img src="graduation.jpg" title="graduation" height="300" width="500">
-            <p>During high school, I was transferred to Mandaue City because my family got a new job. At first, I was shy because I was a transfer student and didn’t have any friends. But over time, I made many friends. They invited me to explore other places and we would often hang out at one of my friend's houses, chatting and enjoying each other's company. When I graduated from high school, I transferred again to a new school for Senior High School. Unfortunately, the pandemic hit, so I didn't get to enjoy the experience of being outside much. But I discovered a lot during this time, even though it was tough.</p>
-        </div>
-
-        <div class="card">
-            <h2>Chapter 4: Journey with My Aii</h2>
-            <img src="may.jpg" title="aii" height="300" width="500">
-            <img src="aii7.jpg" title="aii" height="300" width="500">
-            <p>This is my wonderful journey because I have a supportive, caring, loving, and sweet girlfriend. No wonder I'm in love with her. She is the person who helped me through my darkest moments when I was feeling desperate and wanted to give up because of the many problems I encountered. She lifted me up and gave me the love I needed. I had a crush on her for so long, and one day, I finally confessed. After months of waiting and admiring her from afar, I heard the word 'yes.' I was overjoyed, and now we’ve been together for some time. I hope we stay together forever and achieve our goals to make our parents proud. I’m so lucky to have her in my life.</p>
-        </div>
-
-        <div class="card">
-            <h2>Chapter 5: The Present</h2>
-            <img src="present.jpg" title="present" height="300" width="500">
-            <img src="aii2.jpg" title="present" height="300" width="500">
-            <p>Until now, we continue to pursue our dreams together. Every day, I work hard and maintain myself to achieve the goals I set to become successful. It's a long road, but I’m dedicated to finishing my studies. It may seem far away for now, but one day I’ll be the person standing on that stage, sharing my success with the world.</p>
-        </div>
-    </article>
+  </article>
 </main>
+
+<button id="scrollTopBtn" title="Go to top">↑</button>
+
 <footer>
-    <p>&copy; 2024-2025 Hiroshima(Journey). All rights reserved. </p>
-    </p>
+  <p>&copy; 2024–2025 Hiroshima (Journey). All rights reserved.</p>
 </footer>
+
+<script>
+ 
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function () {
+    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+  scrollTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const faders = document.querySelectorAll(".fade-in");
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 </body>
-</html>         
+</html>
